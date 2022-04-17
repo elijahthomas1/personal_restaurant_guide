@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-mainscreen',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./mainscreen.component.scss'],
 })
 export class MainscreenComponent implements OnInit {
+
+  allRestaurants: any[] = [];
 
   constructor(private router: Router) { }
 
