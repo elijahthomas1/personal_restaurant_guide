@@ -66,3 +66,20 @@
     background-color: lightblue;
     height: 100%;
 }
+
+li {
+    text-decoration: none;
+    list-style: none;
+    background-color: white;
+    color: black;
+    width: 80%;
+    padding: 1em;
+}
+
+span {
+    float: right;
+}
+
+ion-icon {
+    color: goldenrod;
+}

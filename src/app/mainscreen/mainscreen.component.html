@@ -15,6 +15,14 @@
     </form>
   </div>
   <div class="itemArea">
-    <p>items go here</p>
+    <ul *ngFor="let rest of allRestaurants" >
+      <li >{{rest.name}}    <span [ngSwitch]="true">
+        <div *ngSwitchCase="rest.rating === '1'"><ion-icon name="Star"></ion-icon></div>
+        <div *ngSwitchCase="rest.rating === '2'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
+        <div *ngSwitchCase="rest.rating === '3'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
+        <div *ngSwitchCase="rest.rating === '4'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
+        <div *ngSwitchCase="rest.rating === '5'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
+      </span></li>
+    </ul>
   </div>
 </div>
