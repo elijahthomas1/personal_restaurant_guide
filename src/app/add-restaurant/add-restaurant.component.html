@@ -1,3 +1,40 @@
 <div class="addRestMainContainer">
-  <div class="formArea"><form></form></div>
+  <div class="btnArea">
+    <button class="btn btn-danger" (click)="goBack()">Back</button>
+  </div>
+  <h1 class="text-primary">Add New Restaurant</h1>
+  <div class="input-group mb-3">
+    <form (submit)="onSubmit()">
+      <input
+        placeholder="Name..."
+        [(ngModel)]="newRestaurant.name"
+        name="name"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Location..."
+        [(ngModel)]="newRestaurant.location"
+        name="location"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Description..."
+        [(ngModel)]="newRestaurant.description"
+        name="description"
+        class="input-group-text"
+      /><input
+        placeholder="Tags..."
+        [(ngModel)]="newRestaurant.tags"
+        name="tags"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Ratings..."
+        [(ngModel)]="newRestaurant.ratings"
+        name="ratings"
+        class="input-group-text"
+      />
+      <input type="submit" value="Submit" class="btn btn-success" />
+    </form>
+  </div>
 </div>
