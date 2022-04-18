@@ -41,7 +41,7 @@ export class MainscreenComponent implements OnInit {
     });
   }
 
-  goRestaurant(rest) {
+  goRestaurant(rest: any) {
     const thekey = 'current';
     const obj = JSON.stringify(rest);
     Storage.set({

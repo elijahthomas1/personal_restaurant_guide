@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
+import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
 import { InfoscreenComponent } from './infoscreen/infoscreen.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
 import { ViewRestaurantscreenComponent } from './view-restaurantscreen/view-restaurantscreen.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'addRest',
     component: AddRestaurantComponent,
+  },
+  {
+    path: 'edit',
+    component: EditRestaurantComponent,
   },
 ];
 

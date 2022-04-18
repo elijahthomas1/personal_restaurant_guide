@@ -42,4 +42,8 @@ export class ViewRestaurantscreenComponent implements OnInit {
     };
     this.router.navigateByUrl('/main');
   }
+
+  goEdit() {
+    this.router.navigateByUrl('/edit');
+  }
 }
