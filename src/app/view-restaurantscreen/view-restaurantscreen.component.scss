@@ -1,0 +1,64 @@
+.mainDiv {
+    width: 100%;
+    height: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonDiv {
+    background-color: whitesmoke;
+    border-bottom: 2px solid black;
+}
+
+.btnBack {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 12px;
+    margin-left: 1px;
+    height: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 1em;
+}
+
+.btnEdit{
+    margin-top: 20px;
+    height: 2.5em;
+    background-color: green;
+    color: azure;
+    margin-bottom: 5px;
+    float: right;
+    border-radius: 12px;
+    padding: 1em;
+}
+
+.itemArea {
+    background-color: lightblue;
+    height: 100%;
+    color: black;
+}
+
+li {
+    list-style: none;
+    width: 100%;
+    padding: 1em;
+}
+
+.info {
+    background-color: whitesmoke;
+    width: 90%;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 0.25em;
+}
+
+h2 {
+    background-color: whitesmoke;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 1px;
+    padding: 0.25em;
+
+}

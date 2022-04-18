@@ -14,7 +14,6 @@ import { Storage } from '@capacitor/storage';
 export class MainscreenComponent implements OnInit {
 
   public allRestaurants: Array<any>;
-  myStar = `<ion-icon name="heart"></ion-icon>`;
   restkey = "restaurants";
 
   constructor(private router: Router) { }
@@ -31,11 +30,26 @@ export class MainscreenComponent implements OnInit {
     Storage.get({key:`${this.restkey}`}).then((res) => {
       let obj = JSON.parse(res.value);
       this.allRestaurants = obj;
-      this.allRestaurants = this.allrest;
+      if (this.allRestaurants == null) {
+        this.allRestaurants = this.allrest;
+      }
       this.setRestaurants()
       console.log(this.allRestaurants)
       
     })
+  }
+
+  goRestaurant(rest) {
+    let thekey = 'current'
+    let obj = JSON.stringify(rest)
+    Storage.set({
+      key: `${thekey}`,
+      value:`${obj}`
+    }).then(() => {
+      console.log("current restaurant stored")
+      console.log(obj)
+    })
+    this.router.navigateByUrl('/viewRestaurant')
   }
 
 

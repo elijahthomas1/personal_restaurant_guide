@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { InfoscreenComponent } from './infoscreen/infoscreen.component';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
+import { ViewRestaurantscreenComponent } from './view-restaurantscreen/view-restaurantscreen.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'info',
     component: InfoscreenComponent
+  },
+  {
+    path: 'viewRestaurant',
+    component: ViewRestaurantscreenComponent
   },
   
 ];

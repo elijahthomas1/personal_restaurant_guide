@@ -7,9 +7,10 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainscreenComponent } from './mainscreen/mainscreen.component';
+import { ViewRestaurantscreenComponent } from './view-restaurantscreen/view-restaurantscreen.component';
 
 @NgModule({
-  declarations: [AppComponent, MainscreenComponent],
+  declarations: [AppComponent, MainscreenComponent, ViewRestaurantscreenComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
