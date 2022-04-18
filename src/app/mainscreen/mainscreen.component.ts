@@ -31,7 +31,6 @@ export class MainscreenComponent implements OnInit {
 
   getAllRestaurants() {
     Storage.get({ key: `${this.restkey}` }).then((res) => {
-      console.log(res.value);
       const obj = JSON.parse(res.value);
       this.allRestaurants = obj;
       if (this.allRestaurants == null) {

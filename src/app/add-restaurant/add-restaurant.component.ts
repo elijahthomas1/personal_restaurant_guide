@@ -8,22 +8,40 @@ import { Storage } from '@capacitor/storage';
   styleUrls: ['./add-restaurant.component.scss'],
 })
 export class AddRestaurantComponent implements OnInit {
+  restaurants = [];
   main: any;
   newRestaurant = {
     name: '',
     location: '',
     description: '',
     tags: '',
-    ratings: '',
+    rating: '',
   };
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    Storage.get({ key: `restaurants` }).then((res) => {
+      this.restaurants = JSON.parse(res.value);
+      console.log(this.restaurants);
+    });
+  }
 
   async onSubmit() {
-    console.log(this.newRestaurant);
+    this.restaurants.push(this.newRestaurant);
+    await Storage.set({
+      key: 'restaurants',
+      value: `${JSON.stringify(this.restaurants)}`,
+    });
+    console.log(this.restaurants);
     window.alert(`New Restaurant Added`);
+    this.newRestaurant = {
+      name: '',
+      location: '',
+      description: '',
+      tags: '',
+      rating: '',
+    };
     this.router.navigateByUrl('/main');
   }
 

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -24,6 +25,7 @@ import { AddRestaurantComponent } from './add-restaurant/add-restaurant.componen
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
+    ScrollingModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
