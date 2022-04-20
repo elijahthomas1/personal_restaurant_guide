@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
-import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
-import { InfoscreenComponent } from './infoscreen/infoscreen.component';
-import { MainscreenComponent } from './mainscreen/mainscreen.component';
-import { ViewRestaurantscreenComponent } from './view-restaurantscreen/view-restaurantscreen.component';
+import { AddRestaurantComponent } from '../components/add-restaurant/add-restaurant.component';
+import { EditRestaurantComponent } from '../components/edit-restaurant/edit-restaurant.component';
+import { InfoscreenComponent } from '../components/infoscreen/infoscreen.component';
+import { MainscreenComponent } from '../components/mainscreen/mainscreen.component';
+import { ViewRestaurantscreenComponent } from '../components/view-restaurantscreen/view-restaurantscreen.component';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+      import('../components/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: '',
