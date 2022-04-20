@@ -26,21 +26,20 @@
   padding: 1em;
 }
 
-.btnEdit {
-  margin-top: 20px;
-  height: 2.5em;
-  background-color: green;
-  color: azure;
-  margin-bottom: 5px;
-  float: right;
-  border-radius: 12px;
-  padding: 1em;
+.itemArea {
+  overflow-y: scroll;
 }
 
 .itemArea {
   background-color: lightblue;
   height: 100%;
   color: black;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li {

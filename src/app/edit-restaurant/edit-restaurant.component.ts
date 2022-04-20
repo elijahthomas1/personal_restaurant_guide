@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@capacitor/storage';
 import { Router } from '@angular/router';
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-restaurant.component.scss'],
 })
 export class EditRestaurantComponent implements OnInit {
+  public allRestaurants = [];
+  public indexToUpdateRes: any;
   currRestaurant = {
     name: '',
     description: '',
@@ -22,9 +25,31 @@ export class EditRestaurantComponent implements OnInit {
       const obj = JSON.parse(res.value);
       this.currRestaurant = obj;
     });
+
+    Storage.get({ key: `restaurants` }).then((res) => {
+      const obj = JSON.parse(res.value);
+
+      this.allRestaurants = obj;
+      for (const i in this.allRestaurants) {
+        if (this.allRestaurants[i].name === this.currRestaurant.name) {
+          this.indexToUpdateRes = i;
+        }
+      }
+    });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    this.allRestaurants[this.indexToUpdateRes] = this.currRestaurant;
+
+    const obj = JSON.stringify(this.allRestaurants);
+    Storage.set({
+      key: `restaurants`,
+      value: `${obj}`,
+    }).then(() => {
+      window.alert(`Restaurant Updated`);
+      this.router.navigateByUrl('/main');
+    });
+  }
 
   goBack() {
     this.router.navigateByUrl('/main');

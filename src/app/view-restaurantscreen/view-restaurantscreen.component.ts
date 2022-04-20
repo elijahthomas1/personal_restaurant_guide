@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@capacitor/storage';
@@ -9,41 +10,61 @@ import { Storage } from '@capacitor/storage';
 })
 export class ViewRestaurantscreenComponent implements OnInit {
   public allRestaurants: Array<any>;
+  public indexToDelete: any;
   public curRestaurant = {
-    name: 'Pizza Pizza',
-    location: '2077 Danforth Ave, Toronto',
-    description: 'Delicious Pizza and Wings',
-    tags: ['pizza', 'wings', 'italian'],
-    rating: '5',
+    name: '',
+    location: '',
+    description: '',
+    tags: '',
+    rating: '',
   };
-  restkey = 'current';
 
   constructor(private router: Router) {}
 
   ngOnInit() {
     this.getCurrent();
+
+    Storage.get({ key: `restaurants` }).then((res) => {
+      const obj = JSON.parse(res.value);
+
+      this.allRestaurants = obj;
+      for (const i in this.allRestaurants) {
+        if (this.allRestaurants[i].name === this.curRestaurant.name) {
+          this.indexToDelete = i;
+          console.log(this.indexToDelete);
+        }
+      }
+    });
   }
 
   getCurrent() {
     Storage.get({ key: 'current' }).then((res) => {
       const obj = JSON.parse(res.value);
       this.curRestaurant = obj;
-      console.log(this.curRestaurant);
     });
   }
 
   goBack() {
-    this.curRestaurant = {
-      name: 'Pizza Pizza',
-      location: '2077 Danforth Ave, Toronto',
-      description: 'Delicious Pizza and Wings',
-      tags: ['pizza', 'wings', 'italian'],
-      rating: '5',
-    };
     this.router.navigateByUrl('/main');
   }
 
   goEdit() {
     this.router.navigateByUrl('/edit');
+  }
+
+  async delete() {
+    if (this.indexToDelete > -1) {
+      this.allRestaurants.splice(this.indexToDelete, 1);
+    }
+    for (const i in this.allRestaurants) {
+      console.log(this.allRestaurants[i]);
+    }
+    await Storage.set({
+      key: 'restaurants',
+      value: `${JSON.stringify(this.allRestaurants)}`,
+    }).then(() => {
+      window.alert(`Restaurant Deleted`);
+      this.router.navigateByUrl('main');
+    });
   }
 }

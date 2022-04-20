@@ -33,7 +33,6 @@ export class AddRestaurantComponent implements OnInit {
       key: 'restaurants',
       value: `${JSON.stringify(this.restaurants)}`,
     });
-    console.log(this.restaurants);
     window.alert(`New Restaurant Added`);
     this.newRestaurant = {
       name: '',

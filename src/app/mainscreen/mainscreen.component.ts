@@ -89,10 +89,6 @@ export class MainscreenComponent implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.getAllRestaurants()
+    this.getAllRestaurants();
   }
-
-  
-
-
 }

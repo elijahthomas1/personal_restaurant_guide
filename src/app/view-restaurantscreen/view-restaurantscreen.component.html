@@ -4,7 +4,7 @@
     <button class="btn btn-warning" (click)="goEdit()">Edit</button>
   </div>
   <div class="itemArea">
-    <h2>VIEW RESTAURANT INFO</h2>
+    <h2 class="text-primary">VIEW RESTAURANT INFO</h2>
     <div>
       <ul>
         <li *ngIf="curRestaurant !== null">
@@ -29,6 +29,11 @@
             <h3 class="info">{{ curRestaurant.rating }}</h3>
           </div>
         </li>
+        <div class="btn-area">
+          <ion-button color="danger" (click)="delete()"
+            >Delete<ion-icon name="trash-outline"></ion-icon
+          ></ion-button>
+        </div>
       </ul>
     </div>
   </div>
