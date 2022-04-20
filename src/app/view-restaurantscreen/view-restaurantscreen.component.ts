@@ -10,11 +10,11 @@ import { Storage } from '@capacitor/storage';
 export class ViewRestaurantscreenComponent implements OnInit {
   public allRestaurants: Array<any>;
   public curRestaurant = {
-    name: 'Pizza Pizza',
-    location: '2077 Danforth Ave, Toronto',
-    description: 'Delicious Pizza and Wings',
-    tags: ['pizza', 'wings', 'italian'],
-    rating: '5',
+    name: '',
+    location: '',
+    description: '',
+    tags: '',
+    rating: '',
   };
   restkey = 'current';
 
@@ -33,13 +33,6 @@ export class ViewRestaurantscreenComponent implements OnInit {
   }
 
   goBack() {
-    this.curRestaurant = {
-      name: 'Pizza Pizza',
-      location: '2077 Danforth Ave, Toronto',
-      description: 'Delicious Pizza and Wings',
-      tags: ['pizza', 'wings', 'italian'],
-      rating: '5',
-    };
     this.router.navigateByUrl('/main');
   }
 
