@@ -76,14 +76,7 @@ export class MainscreenComponent implements OnInit {
     tags: ['Chicken', 'wings', 'american'],
     rating: '2',
   };
-  allrest = [
-    this.rest1,
-    this.rest2,
-    this.rest3,
-    this.rest1,
-    this.rest2,
-    this.rest3,
-  ];
+  allrest = [this.rest1, this.rest2, this.rest3];
 
   setRestaurants() {
     const obj = JSON.stringify(this.allRestaurants);
@@ -100,5 +93,9 @@ export class MainscreenComponent implements OnInit {
       case 5:
         return `<ion-icon name="heart"></ion-icon>`;
     }
+  }
+
+  refresh() {
+    this.getAllRestaurants();
   }
 }

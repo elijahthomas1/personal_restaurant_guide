@@ -42,6 +42,7 @@ export class AddRestaurantComponent implements OnInit {
       tags: '',
       rating: '',
     };
+
     this.router.navigateByUrl('/main');
   }
 
