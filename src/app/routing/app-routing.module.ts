@@ -5,6 +5,7 @@ import { EditRestaurantComponent } from '../components/edit-restaurant/edit-rest
 import { InfoscreenComponent } from '../components/infoscreen/infoscreen.component';
 import { MainscreenComponent } from '../components/mainscreen/mainscreen.component';
 import { MapscreenComponent } from '../components/mapscreen/mapscreen.component';
+import { SearchscreenComponent } from '../components/searchscreen/searchscreen.component';
 import { ViewRestaurantscreenComponent } from '../components/view-restaurantscreen/view-restaurantscreen.component';
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'map',
     component: MapscreenComponent,
+  },
+  {
+    path: 'search',
+    component: SearchscreenComponent,
   },
 ];
 

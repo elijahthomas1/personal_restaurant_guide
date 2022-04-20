@@ -14,6 +14,8 @@ import { Storage } from '@capacitor/storage';
 export class MainscreenComponent implements OnInit {
   public allRestaurants: Array<any>;
   restkey = 'restaurants';
+  searchRest = '';
+  searchkey = 'searchkey'
 
   constructor(private router: Router) {}
 
@@ -27,6 +29,16 @@ export class MainscreenComponent implements OnInit {
 
   goAddRest() {
     this.router.navigateByUrl('/addRest');
+  }
+
+  goSearch() {
+    const obj = JSON.stringify(this.searchRest)
+    Storage.set({
+      key: `${this.searchkey}`,
+      value: `${obj}`
+    });
+    console.log(this.searchRest)
+    this.router.navigateByUrl('/search');
   }
 
   getAllRestaurants() {

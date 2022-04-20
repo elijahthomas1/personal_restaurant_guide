@@ -5,10 +5,11 @@
   </div>
   <div class="formArea">
     <h1 class="title">Restaurant List</h1>
-    <form class="formForm">
+    <form class="formForm" (submit)="goSearch()">
       <input
         class="formInput"
         type="text"
+        [(ngModel)]="searchRest"
         id="searchInfo"
         name="searchInfo"
         placeholder="Search..."

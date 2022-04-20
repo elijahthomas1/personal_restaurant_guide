@@ -12,6 +12,7 @@ import { MainscreenComponent } from './components/mainscreen/mainscreen.componen
 import { ViewRestaurantscreenComponent } from './components/view-restaurantscreen/view-restaurantscreen.component';
 import { AddRestaurantComponent } from './components/add-restaurant/add-restaurant.component';
 import { EditRestaurantComponent } from './components/edit-restaurant/edit-restaurant.component';
+import { SearchscreenComponent } from './components/searchscreen/searchscreen.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditRestaurantComponent } from './components/edit-restaurant/edit-resta
     ViewRestaurantscreenComponent,
     AddRestaurantComponent,
     EditRestaurantComponent,
+    SearchscreenComponent
   ],
   entryComponents: [],
   imports: [

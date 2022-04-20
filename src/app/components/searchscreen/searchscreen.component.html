@@ -1,0 +1,37 @@
+<div class="mainDiv">
+  <div class="btnArea">
+    <button class="btn btn-danger" (click)="goBack()">Back</button>
+    <h3>SEARCH:</h3>
+  </div>
+  <div class="searchArea">
+    <ul
+    *ngFor="let rest of foundRestaurants; let indexOfelement = index"
+    class="list-group"
+  >
+    <li  class="list-group-item">
+      <h4 class="text-danger">{{ rest.name }}</h4>
+      <span [ngSwitch]="true">
+        <div *ngSwitchCase="rest.rating === '1'">
+          <ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon>
+        </div>
+        <div *ngSwitchCase="rest.rating === '2'">
+          <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon>
+        </div>
+        <div *ngSwitchCase="rest.rating === '3'">
+          <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+          ><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon>
+        </div>
+        <div *ngSwitchCase="rest.rating === '4'">
+          <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+          ><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon>
+        </div>
+        <div *ngSwitchCase="rest.rating === '5'">
+          <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+          ><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+          ><ion-icon name="star"></ion-icon>
+        </div>
+      </span>
+    </li>
+  </ul>
+  </div>
+</div>
