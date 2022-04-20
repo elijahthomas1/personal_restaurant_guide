@@ -88,14 +88,11 @@ export class MainscreenComponent implements OnInit {
     });
   }
 
-  setStars(rating) {
-    switch (rating) {
-      case 5:
-        return `<ion-icon name="heart"></ion-icon>`;
-    }
+  ionViewWillEnter() {
+    this.getAllRestaurants()
   }
 
-  refresh() {
-    this.getAllRestaurants();
-  }
+  
+
+
 }
