@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
 export class InfoscreenComponent implements OnInit {
 
   constructor(private router: Router) { }
-
   ngOnInit() {}
-
   goMain() {
     this.router.navigateByUrl('/main')
   }
