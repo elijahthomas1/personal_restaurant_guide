@@ -52,6 +52,10 @@ export class ViewRestaurantscreenComponent implements OnInit {
     this.router.navigateByUrl('/edit');
   }
 
+  goMap() {
+    this.router.navigateByUrl('/map');
+  }
+
   async delete() {
     if (this.indexToDelete > -1) {
       this.allRestaurants.splice(this.indexToDelete, 1);
@@ -67,4 +71,5 @@ export class ViewRestaurantscreenComponent implements OnInit {
       this.router.navigateByUrl('main');
     });
   }
+
 }
