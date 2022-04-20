@@ -1,0 +1,41 @@
+<div class="editContainer">
+  <div class="buttonDiv">
+    <button class="btn btn-danger" (click)="goBack()">Back</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <h1>Edit Restaurant!</h1>
+    <form (submit)="onSubmit()">
+      <input
+        placeholder="Name..."
+        [(ngModel)]="currRestaurant.name"
+        name="name"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Location..."
+        [(ngModel)]="currRestaurant.location"
+        name="location"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Description..."
+        [(ngModel)]="currRestaurant.description"
+        name="description"
+        class="input-group-text"
+      /><input
+        placeholder="Tags..."
+        [(ngModel)]="currRestaurant.tags"
+        name="tags"
+        class="input-group-text"
+      />
+      <input
+        placeholder="Ratings..."
+        [(ngModel)]="currRestaurant.rating"
+        name="ratings"
+        class="input-group-text"
+      />
+      <input type="submit" value="Submit" class="btn btn-success" />
+    </form>
+  </div>
+</div>

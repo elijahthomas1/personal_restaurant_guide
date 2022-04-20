@@ -8,29 +8,42 @@ import { Storage } from '@capacitor/storage';
   styleUrls: ['./view-restaurantscreen.component.scss'],
 })
 export class ViewRestaurantscreenComponent implements OnInit {
-
   public allRestaurants: Array<any>;
-  public curRestaurant = {name:"Pizza Pizza", location:"2077 Danforth Ave, Toronto", description:"Delicious Pizza and Wings", tags:["pizza", "wings","italian"],rating: "5"};
+  public curRestaurant = {
+    name: 'Pizza Pizza',
+    location: '2077 Danforth Ave, Toronto',
+    description: 'Delicious Pizza and Wings',
+    tags: ['pizza', 'wings', 'italian'],
+    rating: '5',
+  };
   restkey = 'current';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.getCurrent();
   }
 
   getCurrent() {
-    Storage.get({key:'current'}).then((res) => {
-      let obj = JSON.parse(res.value);
+    Storage.get({ key: 'current' }).then((res) => {
+      const obj = JSON.parse(res.value);
       this.curRestaurant = obj;
-      console.log(this.curRestaurant)
-      
-    })
+      console.log(this.curRestaurant);
+    });
   }
 
   goBack() {
-    this.curRestaurant = {name:"Pizza Pizza", location:"2077 Danforth Ave, Toronto", description:"Delicious Pizza and Wings", tags:["pizza", "wings","italian"],rating: "5"};
-    this.router.navigateByUrl('/main')
+    this.curRestaurant = {
+      name: 'Pizza Pizza',
+      location: '2077 Danforth Ave, Toronto',
+      description: 'Delicious Pizza and Wings',
+      tags: ['pizza', 'wings', 'italian'],
+      rating: '5',
+    };
+    this.router.navigateByUrl('/main');
   }
 
+  goEdit() {
+    this.router.navigateByUrl('/edit');
+  }
 }

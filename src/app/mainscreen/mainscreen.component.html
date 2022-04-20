@@ -1,28 +1,56 @@
 <div class="mainDiv">
   <div class="buttonDiv">
-    <button class="btnAdd">
-      ADD ITEM
-    </button>
-    <button class="btnInfo" (click)="goInfo()">
-      INFO
-    </button>
+    <button class="btn btn-dark" (click)="goInfo()">INFO</button>
+    <button class="btn btn-primary" (click)="goAddRest()">ADD ITEM</button>
   </div>
   <div class="formArea">
     <h1 class="title">Restaurant List</h1>
     <form class="formForm">
-      <input class="formInput" type="text" id="searchInfo" name="searchInfo" placeholder="SEARCH">
-      <button class="formBtn" type="submit">SEARCH</button>
+      <input
+        class="formInput"
+        type="text"
+        id="searchInfo"
+        name="searchInfo"
+        placeholder="Search..."
+      />
+      <button class="btn btn-success" type="submit">SEARCH</button>
     </form>
+    <button
+      style="align-self: center"
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="refresh()"
+    >
+      Refresh
+    </button>
   </div>
+
   <div class="itemArea">
-    <ul *ngFor="let rest of allRestaurants" >
-      <li (click)="goRestaurant(rest)">{{rest.name}}    <span [ngSwitch]="true">
-        <div *ngSwitchCase="rest.rating === '1'"><ion-icon name="star"></ion-icon></div>
-        <div *ngSwitchCase="rest.rating === '2'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
-        <div *ngSwitchCase="rest.rating === '3'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
-        <div *ngSwitchCase="rest.rating === '4'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
-        <div *ngSwitchCase="rest.rating === '5'"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></div>
-      </span></li>
+    <ul *ngFor="let rest of allRestaurants" class="list-group">
+      <li (click)="goRestaurant(rest)" class="list-group-item">
+        {{ rest.name }}
+        <span [ngSwitch]="true">
+          <div *ngSwitchCase="rest.rating === '1'">
+            <ion-icon name="star"></ion-icon>
+          </div>
+          <div *ngSwitchCase="rest.rating === '2'">
+            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+          </div>
+          <div *ngSwitchCase="rest.rating === '3'">
+            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+            ><ion-icon name="star"></ion-icon>
+          </div>
+          <div *ngSwitchCase="rest.rating === '4'">
+            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+            ><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+          </div>
+          <div *ngSwitchCase="rest.rating === '5'">
+            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+            ><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon
+            ><ion-icon name="star"></ion-icon>
+          </div>
+        </span>
+      </li>
     </ul>
   </div>
 </div>
