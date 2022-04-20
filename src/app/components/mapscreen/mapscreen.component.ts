@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@capacitor/storage';
+
 
 @Component({
   selector: 'app-mapscreen',
@@ -6,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mapscreen.component.scss'],
 })
 export class MapscreenComponent implements OnInit {
+  public curRestaurant = {
+    name: '',
+    location: '',
+    description: '',
+    tags: '',
+    rating: '',
+  };
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCurrent()
+  }
+
+  getCurrent() {
+    Storage.get({ key: 'current' }).then((res) => {
+      const obj = JSON.parse(res.value);
+      this.curRestaurant = obj;
+    });
+  }
+
+  goBack() {
+    this.router.navigateByUrl('/viewRestaurant');
+  }
 
 }
