@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
 import { InfoscreenComponent } from './infoscreen.component';
 
 describe('InfoscreenComponent', () => {
