@@ -18,9 +18,12 @@
   </div>
 
   <div class="itemArea">
-    <ul *ngFor="let rest of allRestaurants" class="list-group">
+    <ul
+      *ngFor="let rest of allRestaurants; let indexOfelement = index"
+      class="list-group"
+    >
       <li (click)="goRestaurant(rest)" class="list-group-item">
-        {{ rest.name }}
+        <h4 class="text-danger">{{ rest.name }}</h4>
         <span [ngSwitch]="true">
           <div *ngSwitchCase="rest.rating === '1'">
             <ion-icon name="star"></ion-icon>
